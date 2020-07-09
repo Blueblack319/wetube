@@ -1,3 +1,5 @@
+import routes from "../routes";
+
 export const users = (req, res) => res.render("users");
 
 export const editProfile = (req, res) =>
