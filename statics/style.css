@@ -474,7 +474,9 @@ main {
 }
 
 button,
-input {
+input:not([type=file]),
+textarea,
+.fileUpload {
   padding: 7px 10px;
   width: 100%;
   border: none;
@@ -483,31 +485,35 @@ input {
           border-radius: 5px;
   font-size: 14px;
   color: #444444;
+  background-color: white;
   font-weight: 600;
   max-width: 320px;
+  resize: none;
 }
-button::-webkit-input-placeholder, input::-webkit-input-placeholder {
+button::-webkit-input-placeholder, input:not([type=file])::-webkit-input-placeholder, textarea::-webkit-input-placeholder, .fileUpload::-webkit-input-placeholder {
   font-weight: 300;
   color: rgba(0, 0, 0, 0.7);
 }
-button:-moz-placeholder, input:-moz-placeholder {
+button:-moz-placeholder, input:not([type=file]):-moz-placeholder, textarea:-moz-placeholder, .fileUpload:-moz-placeholder {
   font-weight: 300;
   color: rgba(0, 0, 0, 0.7);
 }
-button::-moz-placeholder, input::-moz-placeholder {
+button::-moz-placeholder, input:not([type=file])::-moz-placeholder, textarea::-moz-placeholder, .fileUpload::-moz-placeholder {
   font-weight: 300;
   color: rgba(0, 0, 0, 0.7);
 }
-button:-ms-input-placeholder, input:-ms-input-placeholder {
+button:-ms-input-placeholder, input:not([type=file]):-ms-input-placeholder, textarea:-ms-input-placeholder, .fileUpload:-ms-input-placeholder {
   font-weight: 300;
   color: rgba(0, 0, 0, 0.7);
 }
-button::-ms-input-placeholder, input::-ms-input-placeholder {
+button::-ms-input-placeholder, input:not([type=file])::-ms-input-placeholder, textarea::-ms-input-placeholder, .fileUpload::-ms-input-placeholder {
   font-weight: 300;
   color: rgba(0, 0, 0, 0.7);
 }
 button::placeholder,
-input::placeholder {
+input:not([type=file])::placeholder,
+textarea::placeholder,
+.fileUpload::placeholder {
   font-weight: 300;
   color: rgba(0, 0, 0, 0.7);
 }
@@ -516,6 +522,10 @@ button {
   border: none;
   background-color: #4267b2;
   color: white;
+}
+
+button.delete {
+  background-color: #bb2f2a;
 }
 
 .header {
@@ -660,7 +670,8 @@ button {
   margin-bottom: 50px;
 }
 .form-container form button,
-.form-container form input {
+.form-container form input:not([type=file]),
+.form-container form .fileUpload {
   display: block;
   width: 100%;
   padding-top: 10px;
@@ -670,12 +681,27 @@ button {
           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 .form-container form button:not(:last-child),
-.form-container form input:not(:last-child) {
+.form-container form input:not([type=file]):not(:last-child),
+.form-container form .fileUpload:not(:last-child) {
+  margin-bottom: 25px;
+}
+.form-container form textarea {
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   margin-bottom: 25px;
 }
 .form-container form input[type=submit] {
   background-color: #3498db;
   color: white;
+}
+.form-container a {
+  width: 100%;
+  max-width: 320px;
+}
+.form-container .fileUpload label {
+  font-weight: 300;
+  margin-right: 10px;
 }
 
 .social-login {
@@ -733,6 +759,16 @@ button {
   color: white;
 }
 
+.videoBlock video {
+  margin-bottom: 10px;
+  max-width: 100%;
+}
+.videoBlock .videoBlock__title {
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
 .video-detail__container {
   display: -webkit-box;
   display: -webkit-flex;
@@ -775,5 +811,26 @@ button {
   font-size: 14px;
 }
 .video-detail__container .video__info .video__description {
+  font-size: 16px;
+}
+.video-detail__container .video__comments {
+  margin-top: 25px;
+}
+.video-detail__container .video__comments .video__comments-number {
   font-size: 18px;
+}
+
+.home-videos {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(150px, 1fr));
+  grid-gap: 50px;
+}
+.home-videos .videoBlock:first-child,
+.home-videos .videoBlock:nth-child(2) {
+  grid-column: span 3;
+}
+.home-videos .videoBlock:nth-child(3),
+.home-videos .videoBlock:nth-child(4),
+.home-videos .videoBlock:nth-child(5) {
+  grid-column: span 2;
 }
