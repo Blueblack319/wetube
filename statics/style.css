@@ -752,14 +752,17 @@ button.delete {
 }
 .social-login .social-login__github {
   background-color: #444444;
-  color: white;
 }
 .social-login .social-login__github a {
   color: white;
+  text-decoration: none;
 }
 .social-login .social-login__facebook {
   background-color: #4267b2;
+}
+.social-login .social-login__facebook a {
   color: white;
+  text-decoration: none;
 }
 
 .videoBlock video {
