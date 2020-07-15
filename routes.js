@@ -7,6 +7,7 @@ const SEARCH = "/search";
 
 //Users
 const USERS = "/users";
+const ME = "/me";
 const USER_DETAIL = "/:id";
 const EDIT_PROFILE = "/:id/edit-profile";
 const CHANGE_PASSWORD = "/:id/change-password"; //"/change-password" -> 404 Error! Why!?
@@ -17,6 +18,11 @@ const UPLOAD = "/upload";
 const EDIT_VIDEO = "/:id/edit";
 const DELETE_VIDEO = "/:id/delete";
 const VIDEO_DETAIL = "/:id";
+
+// Github
+
+const GITHUB = "/auth/github";
+const GITHUB_CALLBACK = "/auth/github/callback";
 
 const routes = {
   home: HOME,
@@ -69,6 +75,9 @@ const routes = {
       return DELETE_VIDEO;
     }
   },
+  github: GITHUB,
+  githubCallback: GITHUB_CALLBACK,
+  me: ME,
 };
 
 export default routes;

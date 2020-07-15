@@ -1,13 +1,12 @@
 import multer from "multer";
 import routes from "./routes";
-import { EvalSourceMapDevToolPlugin } from "webpack";
 
 const multerVideo = multer({ dest: "uploads/videos/" });
 
 export const localsMiddelwares = (req, res, next) => {
   res.locals.siteName = "WeTube";
   res.locals.routes = routes;
-  res.locals.user = req.user || null;
+  res.locals.loggedUser = req.user || null;
   next();
 };
 

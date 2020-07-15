@@ -754,6 +754,9 @@ button.delete {
   background-color: #444444;
   color: white;
 }
+.social-login .social-login__github a {
+  color: white;
+}
 .social-login .social-login__facebook {
   background-color: #4267b2;
   color: white;
