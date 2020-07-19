@@ -70,7 +70,6 @@ export const getMe = (req, res) => {
 export const githubLogin = passport.authenticate("github");
 
 export const githubLoginCallback = async (_, __, profile, cb) => {
-  console.log(_, __, profile, cb);
   const {
     _json: { id, avatar_url, name, email },
   } = profile;
@@ -102,17 +101,17 @@ export const postGithubLogin = (req, res) => {
 
 export const facebookLogin = passport.authenticate("facebook");
 
-export const facebookLoginCallback = (_, __, profile, cb) => {
+export const facebookLoginCallback = async (_, __, profile, cb) => {
   const {
     _json: { id, name, email },
   } = profile;
-  try{
+  try {
     const user = await User.findOne({ email });
     if (user) {
       user.githubId = id;
       user.save();
       return cb(null, user);
-    }else{
+    } else {
       const newUser = await User.create({
         email,
         name,
@@ -121,8 +120,8 @@ export const facebookLoginCallback = (_, __, profile, cb) => {
       });
       return cb(null, newUser);
     }
-  }catch(error){
-    return cb(error)
+  } catch (error) {
+    return cb(error);
   }
 };
 
