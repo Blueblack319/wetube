@@ -2,7 +2,7 @@ extends layouts/main
 
 block content
     .form-container
-        form(action=routes.editProfile(), method="post")
+        form(action=routes.editProfile, method="post")
             .fileUpload
                 label(for="avatar") Avatar
                 input(type="file", name="avatar", id="avatar")

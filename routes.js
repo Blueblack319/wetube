@@ -54,7 +54,7 @@ const routes = {
     if (id) {
       return `/users/${id}/edit-profile`;
     } else {
-      return HOME;
+      return EDIT_PROFILE;
     }
   },
   videos: VIDEOS,
