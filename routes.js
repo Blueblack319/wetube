@@ -1,4 +1,5 @@
 //Global
+
 const HOME = "/";
 const JOIN = "/join";
 const LOGIN = "/login";
@@ -6,6 +7,7 @@ const LOGOUT = "/logout";
 const SEARCH = "/search";
 
 //Users
+
 const USERS = "/users";
 const ME = "/me";
 const USER_DETAIL = "/:id";
@@ -13,6 +15,7 @@ const EDIT_PROFILE = "/:id/edit-profile";
 const CHANGE_PASSWORD = "/:id/change-password"; //"/change-password" -> 404 Error! Why!?
 
 //Videos
+
 const VIDEOS = "/videos";
 const UPLOAD = "/upload";
 const EDIT_VIDEO = "/:id/edit";
@@ -50,13 +53,7 @@ const routes = {
       return CHANGE_PASSWORD;
     }
   },
-  editProfile: (id) => {
-    if (id) {
-      return `/users/${id}/edit-profile`;
-    } else {
-      return EDIT_PROFILE;
-    }
-  },
+  editProfile: EDIT_PROFILE,
   videos: VIDEOS,
   upload: UPLOAD,
   editVideo: (id) => {

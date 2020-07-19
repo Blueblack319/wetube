@@ -7,7 +7,7 @@ block content
             h4.profile__username=user.name
         if user._id === loggedUser._id
             .user-profile__btns
-                a(href=routes.editProfile(user._id))
+                a(href=`/users${routes.editProfile}`)
                     button 🖋 Edit Profile
-                a(href=routes.changePassword(user._id))
+                a(href=routes.changePassword())
                     button 🔒 Change Password
