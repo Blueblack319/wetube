@@ -12,7 +12,7 @@ const USERS = "/users";
 const ME = "/me";
 const USER_DETAIL = "/:id";
 const EDIT_PROFILE = "/edit-profile";
-const CHANGE_PASSWORD = "/:id/change-password"; //"/change-password" -> 404 Error! Why!?
+const CHANGE_PASSWORD = "/change-password"; //"/change-password" -> 404 Error! Why!?
 
 //Videos
 
@@ -46,13 +46,7 @@ const routes = {
       return USER_DETAIL;
     }
   },
-  changePassword: (id) => {
-    if (id) {
-      return `/users/${id}/change-password`;
-    } else {
-      return CHANGE_PASSWORD;
-    }
-  },
+  changePassword: CHANGE_PASSWORD,
   editProfile: EDIT_PROFILE,
   videos: VIDEOS,
   upload: UPLOAD,
