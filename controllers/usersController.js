@@ -20,6 +20,7 @@ export const postEditProfile = async (req, res) => {
       avatarUrl: file ? file.path : req.user.avatarUrl,
     });
     res.redirect(`/users${routes.me}`);
+    // Clear!!
   } catch (error) {
     res.render("editProfile", { pageTitle: "Edit Profile" });
   }
