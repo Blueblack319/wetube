@@ -5,7 +5,7 @@ block content
         .video__player
             video(src=`/${video.fileUrl}`, controls=true)
         .vidoe__info
-            if video.creator.id === loggedUser._id
+            if loggedUser && video.creator.id === loggedUser._id
                 a(href=routes.editVideo(video.id)) 
                     button Edit Video
             h5.video__title=video.title
